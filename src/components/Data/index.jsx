@@ -30,29 +30,29 @@ const Data = () => {
     }
   };
 
-  const sortData = event => {
-    event.persist();
-    const { name, type } = event.target.dataset;
+  // const sortData = event => {
+  //   event.persist();
+  //   const { name, type } = event.target.dataset;
     
-    let sorted;
-    if (type === "int")
-      sorted = data.sort((a, b) => Number(a[name]) - Number(b[name]));
-    else
-      sorted = data.sort((a, b) => {
-        if (a[name].toLowerCase() < b[name].toLowerCase()) return -1;
-        if (a[name].toLowerCase() > b[name].toLowerCase()) return 1;
-        return 0;
-      });
+  //   let sorted;
+  //   if (type === "int")
+  //     sorted = data.sort((a, b) => Number(a[name]) - Number(b[name]));
+  //   else
+  //     sorted = data.sort((a, b) => {
+  //       if (a[name].toLowerCase() < b[name].toLowerCase()) return -1;
+  //       if (a[name].toLowerCase() > b[name].toLowerCase()) return 1;
+  //       return 0;
+  //     });
 
-    if (order) {
-      sorted = sorted.reverse();
-      setOrder(false);
-    } else {
-      setOrder(true);
-    }
+  //   if (order) {
+  //     sorted = sorted.reverse();
+  //     setOrder(false);
+  //   } else {
+  //     setOrder(true);
+  //   }
 
-    setData([...sorted]);
-  };
+  //   setData([...sorted]);
+  // };
 
 
   return (
@@ -73,12 +73,6 @@ const Data = () => {
           <div className="col-auto">
             <input type="text" name="filter" className="form-control" onChange={filter}/>
           </div>
-        </div>
-
-        <div>
-          <button onClick={data}>
-            Sort
-          </button>
         </div>
 
         <table className="table">

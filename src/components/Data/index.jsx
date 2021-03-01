@@ -7,7 +7,6 @@ const Data = () => {
 
   const [data, setData] = useState([]);
   const posts = useMemo(() => data, [data]);
-  const [order, setOrder] = useState(null)
 
   useEffect(() => {
     axios.get(APILINK).then(resp => {
